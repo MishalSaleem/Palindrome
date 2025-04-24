@@ -2,8 +2,8 @@
 8086 Assembly Palindrome Checker
 
 This is a simple 8086 Assembly Language program that checks whether a user-entered string is a palindrome or not.
-Features
 
+Features
 Takes string input from the user (up to 20 characters)
 Checks if the string is a palindrome
 Displays:
