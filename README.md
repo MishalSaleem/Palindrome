@@ -32,4 +32,13 @@ hello
 Not Palindrome
 Length is: 5
 
+![image](https://github.com/user-attachments/assets/76216fcb-ca3e-4fb8-a23b-d54de2fdcf3a)
+![image](https://github.com/user-attachments/assets/8bf4f482-5bea-4e00-93e1-a54d58d51000)
+
+
+
+ 
+ 
+
+
 
