@@ -1,0 +1,71 @@
+org 100h
+.model small
+.stack 100h
+.data
+str db 20 dup('$')
+len db ?
+palindrome_msg db 13, 10, 'Palindrome $'
+not_palindrome_msg db 13, 10, 'Not Palindrome $'
+msg1 db 'Enter a string $'
+msg2 db 13, 10, 'Length is: $'
+.code
+
+main proc
+mov ax, @data
+mov ds, ax
+mov cx, 0
+mov si, 0
+mov dx, offset msg1
+mov ah,9
+int 21h
+input_loop:
+mov ah, 1
+int 21h
+cmp al, 13
+je done_input
+mov str[si], al
+inc si
+inc cx
+jmp input_loop
+
+done_input: 
+mov len, cl
+
+mov si, 0
+mov di, cx
+dec di
+
+check_palindrome:
+mov al, str[si]
+mov ah, str[di]
+cmp al, ah
+
+jne not_palindrome
+inc si
+dec di
+cmp si, di
+jl check_palindrome
+
+print_palindrome:
+mov dx, offset palindrome_msg
+mov ah, 9
+int 21h
+jmp print_len
+
+not_palindrome:
+mov dx, offset not_palindrome_msg
+mov ah, 9
+int 21h
+print_len:
+mov dx, offset msg2
+mov ah,9
+int 21h
+mov al, len
+add al, 48 
+mov dl, al
+mov ah, 2
+int 21h
+ret
+
+main endp
+end main
