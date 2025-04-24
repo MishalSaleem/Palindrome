@@ -20,3 +20,16 @@ This is a simple **8086 Assembly Language program** that checks whether a user-e
 
 You can run this program using an **8086 emulator** like **EMU8086**:
 
+## Sample Output
+
+Enter a string
+madam
+Palindrome
+Length is: 5
+
+Enter a string
+hello
+Not Palindrome
+Length is: 5
+
+
